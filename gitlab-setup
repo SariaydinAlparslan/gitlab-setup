@@ -1,0 +1,22 @@
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install ca-certificates curl openssh-server postfix tzdata perl
+
+cd /tmp
+curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh
+
+
+chmod u+x script.deb.sh
+ ./script.deb.sh 
+ 
+sudo apt install gitlab-ee
+
+security gruplar hallet
+
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow OpenSSH
+
+sudo vim /etc/gitlab/gitlab.rb    //https ip- lets
+sudo gitlab-ctl reconfigure
+sudo cat /etc/gitlab/initial_root_password
